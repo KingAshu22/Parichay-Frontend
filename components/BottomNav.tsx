@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname, useRouter } from "next/navigation";
 import useCart from "@/lib/hooks/useCart";
 import { Heart, Home, ShoppingBag, Box, Search } from "lucide-react";
 
 export default function BottomNav() {
+  const pathname = usePathname();
   const router = useRouter();
   const cart = useCart();
 
@@ -34,15 +35,15 @@ export default function BottomNav() {
       <nav className="container mx-auto pl-10 pr-10 py-2">
         <div className="flex justify-between">
           {navItems.map(({ path, icon, label }) => (
-            <Link href={path} key={path}>
-              <a
-                className={`flex flex-col items-center justify-center text-white py-2 ${
-                  router.pathname === path ? "bg-red-500 px-4 rounded-lg" : ""
-                }`}
-              >
-                {icon}
-                <span className="text-sm">{label}</span>
-              </a>
+            <Link
+              href={path}
+              key={path}
+              className={`flex flex-col items-center justify-center text-white py-2 ${
+                pathname === path ? "bg-red-500 px-4 rounded-lg" : ""
+              }`}
+            >
+              {icon}
+              <span className="text-sm">{label}</span>
             </Link>
           ))}
         </div>
