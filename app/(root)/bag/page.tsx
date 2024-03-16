@@ -182,14 +182,14 @@ const Cart = () => {
             </div>
             <PayButton
               amount={totalRounded + parseInt("100")}
-              name={name}
-              email={email}
+              name={name || ""} // Ensure name is a string or default to an empty string
+              email={email || ""}
               user={user}
-              mobile={mobile}
-              streetAddress={streetAddress}
-              city={city}
-              postalCode={postalCode}
-              country={country}
+              mobile={mobile || ""}
+              streetAddress={streetAddress || ""}
+              city={city || ""}
+              postalCode={postalCode || ""}
+              country={country || ""}
             />
             <button
               className="border rounded-lg text-body-bold text-black bg-green-600 py-3 w-full hover:bg-white hover:text-black"
