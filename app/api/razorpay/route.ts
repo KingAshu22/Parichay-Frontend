@@ -37,6 +37,16 @@ export const POST = async (req: NextRequest) => {
             postalCode,
             country,
             cartProducts,
+        }: {
+            amount: number;
+            name: string;
+            email: string;
+            mobile: string;
+            streetAddress: string;
+            city: string;
+            postalCode: string;
+            country: string;
+            cartProducts: CartProduct[];
         } = await req.json();
 
         // Data validation
