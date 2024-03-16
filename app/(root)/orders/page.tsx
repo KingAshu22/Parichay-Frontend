@@ -6,6 +6,13 @@ import Image from "next/image";
 const Orders = async () => {
   const { userId } = auth();
   const orders = await getOrders(userId as string);
+  interface OrderType {
+    _id: string;
+    totalAmount: number;
+    paymentMode: string; // Add paymentMode property
+    createdAt: string; // Assuming createdAt is a string; adjust if necessary
+    products: OrderItemType[]; // Assuming products is an array of OrderItemType
+  }
 
   return (
     <div className="px-10 py-5 max-sm:px-3">
