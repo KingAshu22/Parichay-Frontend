@@ -5,7 +5,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Carousel = ({ images }) => {
+interface Image {
+  src: string;
+  link: string;
+}
+
+const Carousel = ({ images }: { images: Image[] }) => {
   const settings = {
     dots: true,
     infinite: true,
