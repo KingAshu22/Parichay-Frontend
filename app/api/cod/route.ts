@@ -5,6 +5,15 @@ import { connectToDB } from "@/lib/mongoDB";
 import { auth } from "@clerk/nextjs";
 import { NextRequest, NextResponse } from "next/server";
 
+interface CartProduct {
+    item: {
+        _id: string;
+    };
+    color?: string;
+    size?: string;
+    quantity: number;
+}
+
 export const POST = async (req: NextRequest) => {
     try {
         const { userId } = auth();
@@ -47,7 +56,7 @@ export const POST = async (req: NextRequest) => {
         console.log(cartProducts);
 
         // Fetch product information
-        const productsIds = cartProducts.map(product => product.item._id);
+        const productsIds = cartProducts.map((product: CartProduct) => product.item._id);
         const productsInfos = await Product.find({ _id: { $in: productsIds } });
 
         // Prepare line items
