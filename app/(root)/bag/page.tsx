@@ -190,7 +190,6 @@ const Cart = () => {
               city={city}
               postalCode={postalCode}
               country={country}
-              key_id={process.env.RAZORPAY_KEY_ID}
             />
             <button
               className="border rounded-lg text-body-bold text-black bg-green-600 py-3 w-full hover:bg-white hover:text-black"
