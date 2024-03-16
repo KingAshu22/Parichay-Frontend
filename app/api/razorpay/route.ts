@@ -89,9 +89,10 @@ export const POST = async (req: NextRequest) => {
 
         // Create Razorpay order
         const razorpay = new Razorpay({
-            key_id: process.env.RAZORPAY_KEY_ID?.toString(), // Using optional chaining and converting to string
-            key_secret: process.env.RAZORPAY_KEY_SECRET?.toString(), // Using optional chaining and converting to string
+            key_id: process.env.RAZORPAY_KEY_ID ? process.env.RAZORPAY_KEY_ID.toString() : '', // Check if RAZORPAY_KEY_ID is defined, convert to string, or provide a default value
+            key_secret: process.env.RAZORPAY_KEY_SECRET ? process.env.RAZORPAY_KEY_SECRET.toString() : '', // Check if RAZORPAY_KEY_SECRET is defined, convert to string, or provide a default value
         });
+
 
         const options = {
             amount: (amount * 100).toString(),
