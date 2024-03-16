@@ -1,3 +1,10 @@
+// Declare Razorpay property on window object
+declare global {
+  interface Window {
+    Razorpay: any; // Adjust the type accordingly if possible
+  }
+}
+
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
@@ -13,6 +20,16 @@ export default function PayButton({
   city,
   postalCode,
   country,
+}: {
+  amount: number;
+  name: string;
+  user: any; // Adjust the type accordingly
+  email: string;
+  mobile: string;
+  streetAddress: string;
+  city: string;
+  postalCode: string;
+  country: string;
 }) {
   const router = useRouter();
 
@@ -69,7 +86,7 @@ export default function PayButton({
         order_id: data.id,
         description: "Thank you for your Order",
         image: "https://manuarora.in/logo.png",
-        handler: async function (response) {
+        handler: async function (response: any) {
           const body = { ...response };
           const res = await axios.post("/api/validate", body);
 
@@ -89,8 +106,13 @@ export default function PayButton({
         },
       };
 
-      const paymentObject = new window.Razorpay(options);
-      paymentObject.open();
+      // Check if Razorpay is loaded before creating paymentObject
+      if (window.Razorpay) {
+        const paymentObject = new window.Razorpay(options);
+        paymentObject.open();
+      } else {
+        console.error("Razorpay SDK not loaded");
+      }
     } catch (error) {
       console.error("Error making payment:", error);
       // Handle error gracefully
