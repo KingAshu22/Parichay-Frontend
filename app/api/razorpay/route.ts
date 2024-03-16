@@ -8,6 +8,15 @@ import { NextRequest, NextResponse } from "next/server";
 import shortid from "shortid";
 import Razorpay from "razorpay";
 
+interface CartProduct {
+    item: {
+        _id: string;
+    };
+    color?: string;
+    size?: string;
+    quantity: number;
+}
+
 export const POST = async (req: NextRequest) => {
     try {
         const { userId } = auth();
