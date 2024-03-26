@@ -8,27 +8,36 @@ const Footer = () => {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div>
           <h4 className="font-bold mb-4">Information</h4>
-          <a href="#" className="text-gray-600 hover:underline block mb-2">
+          <a
+            href="tel:9876543210"
+            className="text-gray-600 hover:underline block mb-2"
+          >
             Talk To Us
           </a>
-          <a href="#" className="text-gray-600 hover:underline block mb-2">
+          {/* <a href="#" className="text-gray-600 hover:underline block mb-2">
             Shipping In India
           </a>
           <a href="#" className="text-gray-600 hover:underline block mb-2">
             International Shipping
-          </a>
-          <a href="#" className="text-gray-600 hover:underline block mb-2">
+          </a> */}
+          <a
+            href="/return-and-refund"
+            className="text-gray-600 hover:underline block mb-2"
+          >
             Returns and Refunds
           </a>
         </div>
         <div>
           <h4 className="font-bold mb-4">Customer Service</h4>
-          <a href="#" className="text-gray-600 hover:underline block mb-2">
+          <a
+            href="/return-and-refund"
+            className="text-gray-600 hover:underline block mb-2"
+          >
             Returns & Exchanges
           </a>
-          <a href="#" className="text-gray-600 hover:underline block mb-2">
+          {/* <a href="#" className="text-gray-600 hover:underline block mb-2">
             Track Your Order
-          </a>
+          </a> */}
         </div>
         <div>
           <h4 className="font-bold mb-4">Shop</h4>
@@ -40,17 +49,23 @@ const Footer = () => {
           </a>
         </div>
         <div>
-          <h4 className="font-bold mb-4">About Us</h4>
-          <a href="#" className="text-gray-600 hover:underline block mb-2">
-            Our Story
-          </a>
-          <a href="#" className="text-gray-600 hover:underline block mb-2">
+          <h4 className="font-bold mb-4">Policies</h4>
+          <a
+            href="/terms-and-services"
+            className="text-gray-600 hover:underline block mb-2"
+          >
             Terms of Service
           </a>
-          <a href="#" className="text-gray-600 hover:underline block mb-2">
+          <a
+            href="/return-and-refund"
+            className="text-gray-600 hover:underline block mb-2"
+          >
             Refund Policy
           </a>
-          <a href="#" className="text-gray-600 hover:underline block mb-2">
+          <a
+            href="/privacy-policy"
+            className="text-gray-600 hover:underline block mb-2"
+          >
             Privacy Policy
           </a>
         </div>
