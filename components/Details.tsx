@@ -38,8 +38,8 @@ const DetailItem = ({ icon, text }: DetailItemProps) => (
 const Details = () => {
   return (
     <Container>
-      <DetailItem icon={<Truck />} text="Free Shipping" />
-      <DetailItem icon={<Wallet />} text="Cash On Delivery" />
+      <DetailItem icon={<Truck />} text="Fast Shipping" />
+      <DetailItem icon={<Wallet />} text="Affordable Products" />
       <DetailItem icon={<ShieldCheck />} text="Secured Payments" />
       <DetailItem icon={<Phone />} text="Easy Support" />
       <DetailItem icon={<Box />} text="Easy Returns" />

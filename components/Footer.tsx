@@ -41,11 +41,17 @@ const Footer = () => {
         </div>
         <div>
           <h4 className="font-bold mb-4">Shop</h4>
-          <a href="#" className="text-gray-600 hover:underline block mb-2">
-            Kurta
+          <a
+            href="/collections/662d273f8509622013f73e66"
+            className="text-gray-600 hover:underline block mb-2"
+          >
+            Sequence Kurta
           </a>
-          <a href="#" className="text-gray-600 hover:underline block mb-2">
-            Sherwani
+          <a
+            href="/collections/662e71937ff2084190d84d53"
+            className="text-gray-600 hover:underline block mb-2"
+          >
+            Rugged Series
           </a>
         </div>
         <div>

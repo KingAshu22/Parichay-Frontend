@@ -27,6 +27,15 @@ const Cart = () => {
 
   const cart = useCart();
 
+  const totalQuantity = cart.cartItems.reduce(
+    (acc, cartItem) => acc + cartItem.quantity,
+    0
+  );
+
+  const deliveryCharges = totalQuantity * 110;
+
+  const CODDeliveryCharges = totalQuantity * 210;
+
   const total = cart.cartItems.reduce(
     (acc, cartItem) => acc + cartItem.item.price * cartItem.quantity,
     0
@@ -41,7 +50,7 @@ const Cart = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          amount: totalRounded + 200, // Adjust the amount as needed
+          amount: totalRounded + deliveryCharges, // Adjust the amount as needed
           name,
           email,
           mobile,
@@ -169,19 +178,19 @@ const Cart = () => {
               <span>₹ {totalRounded}</span>
             </div>
             <div className="flex justify-between text-body-semibold">
-              <span>Delivery</span>
-              <span>₹ 100</span>
+              <span>Delivery Charges</span>
+              <span>₹ {deliveryCharges}</span>
             </div>
             <div className="flex justify-between">
-              <span>Note: ₹ 100 will be charged extra for COD Orders</span>
+              <span>Note: Delivery Charges = ₹ 110 / Product</span>
             </div>
             <hr />
             <div className="flex justify-between text-body-semibold">
               <span>Total</span>
-              <span>₹ {totalRounded + 100}</span>
+              <span>₹ {totalRounded + deliveryCharges}</span>
             </div>
             <PayButton
-              amount={totalRounded + parseInt("100")}
+              amount={totalRounded + deliveryCharges}
               name={name || ""} // Ensure name is a string or default to an empty string
               email={email || ""}
               user={user}
@@ -191,12 +200,12 @@ const Cart = () => {
               postalCode={postalCode || ""}
               country={country || ""}
             />
-            <button
+            {/* <button
               className="border rounded-lg text-body-bold text-black bg-green-600 py-3 w-full hover:bg-white hover:text-black"
               onClick={placeCODOrder}
             >
               Cash On Delivery
-            </button>
+            </button> */}
           </div>
         </div>
       )}
