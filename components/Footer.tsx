@@ -9,7 +9,7 @@ const Footer = () => {
         <div>
           <h4 className="font-bold mb-4">Information</h4>
           <a
-            href="tel:9876543210"
+            href="tel:+919987902421"
             className="text-gray-600 hover:underline block mb-2"
           >
             Talk To Us
@@ -72,7 +72,7 @@ const Footer = () => {
       </div>
       <div className="flex justify-between items-center mt-8 border-t border-gray-300 pt-4 pb-10">
         <span className="text-gray-600 pb-10">
-          &copy; 2024 Parichay Designer
+          &copy; 2024 Parichay Designer, a subsidiary of Parichay Mens.
         </span>
         <div className="text-gray-600 pb-10">
           {/* Insert social media icons here */}

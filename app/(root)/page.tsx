@@ -8,39 +8,39 @@ import Image from "next/image";
 
 const desktopImages = [
   {
-    src: "https://www.inweaveindia.com/cdn/shop/files/Galantine_1600x550.gif?v=1706886290",
-    link: "/categories",
+    src: "1.jpg",
+    link: "/",
   },
   {
-    src: "https://www.inweaveindia.com/cdn/shop/files/Winter-banner_1600x550.gif?v=1702024751",
-    link: "/categories",
+    src: "2.jpg",
+    link: "/",
   },
   {
-    src: "https://www.inweaveindia.com/cdn/shop/files/desktop-banner_1600x550.jpg?v=1695371132",
-    link: "/products",
+    src: "3.jpg",
+    link: "/",
   },
   {
-    src: "https://www.inweaveindia.com/cdn/shop/files/inweave-banner---2_1600x550.gif?v=1695370817",
-    link: "/bag",
+    src: "4.jpg",
+    link: "/",
   },
 ];
 
 const mobileImages = [
   {
-    src: "https://www.inweaveindia.com/cdn/shop/files/Mobile_fcef4528-203e-485a-aa82-f861980ad523_600x600.gif?v=1706886364",
-    link: "/categories",
+    src: "mobile_1.jpg",
+    link: "/",
   },
   {
-    src: "https://www.inweaveindia.com/cdn/shop/files/Mobile__1_600x600.gif?v=1702024946",
-    link: "/categories",
+    src: "mobile_2.jpg",
+    link: "/",
   },
   {
-    src: "https://www.inweaveindia.com/cdn/shop/files/mobile-banner_600x600.jpg?v=1695371151",
-    link: "/products",
+    src: "mobile_3.jpg",
+    link: "/",
   },
   {
-    src: "https://www.inweaveindia.com/cdn/shop/files/navratri-mobile-banner_600x600.gif?v=1695370903",
-    link: "/bag",
+    src: "mobile_4.jpg",
+    link: "/",
   },
 ];
 
