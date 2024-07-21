@@ -3,43 +3,42 @@ import Collections from "@/components/Collections";
 import Details from "@/components/Details";
 import Footer from "@/components/Footer";
 import ProductList from "@/components/ProductList";
-
 import Image from "next/image";
 
 const desktopImages = [
   {
-    src: "1.jpg",
+    src: "1.webp",
     link: "/",
   },
   {
-    src: "2.jpg",
+    src: "2.webp",
     link: "/",
   },
   {
-    src: "3.jpg",
+    src: "3.webp",
     link: "/",
   },
   {
-    src: "4.jpg",
+    src: "4.webp",
     link: "/",
   },
 ];
 
 const mobileImages = [
   {
-    src: "mobile_1.jpg",
+    src: "1.webp",
     link: "/",
   },
   {
-    src: "mobile_2.jpg",
+    src: "2.webp",
     link: "/",
   },
   {
-    src: "mobile_3.jpg",
+    src: "3.webp",
     link: "/",
   },
   {
-    src: "mobile_4.jpg",
+    src: "4.webp",
     link: "/",
   },
 ];
@@ -47,8 +46,18 @@ const mobileImages = [
 export default function Home() {
   return (
     <>
-      <div className="desktop-header">
-        <Carousel images={desktopImages} />
+      <div className="desktop-header ml-2 mr-2">
+        <div className="desktop-images">
+          {desktopImages.map((image, index) => (
+            <a key={index} href={image.link}>
+              <img
+                className="rounded-lg"
+                src={image.src}
+                alt={`Image ${index + 1}`}
+              />
+            </a>
+          ))}
+        </div>
       </div>
       <div className="mobile-bottom-nav">
         <Carousel images={mobileImages} />
@@ -59,12 +68,14 @@ export default function Home() {
         <img
           style={{ width: "100%", marginTop: "50px" }}
           src="https://cdn.shopify.com/s/files/1/1746/5485/files/hn.jpg?v=1675403410"
+          alt="Header Image"
         />
       </div>
       <div className="mobile-bottom-nav">
         <img
           style={{ width: "100%", marginTop: "50px" }}
           src="https://cdn.shopify.com/s/files/1/1746/5485/files/image_2.png?v=1675403265"
+          alt="Mobile Image"
         />
       </div>
       <Details />

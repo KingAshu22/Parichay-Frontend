@@ -21,7 +21,7 @@ const ProductDetails = async ({
       </div>
 
       {relatedProducts.length > 0 && (
-        <div className="flex flex-col items-center px-10 py-5 max-md:px-3">
+        <div className="flex flex-col items-center px-10 pl-24 py-5 max-md:px-3">
           <p className="text-heading3-bold">Related Products</p>
           <div className="flex flex-wrap gap-16 mx-auto mt-8">
             {relatedProducts?.map((product: ProductType) => (

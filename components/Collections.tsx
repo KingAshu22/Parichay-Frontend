@@ -18,7 +18,7 @@ const Collections = async () => {
                 key={collection._id}
                 src={collection.image}
                 alt={collection.title}
-                width={350}
+                width={200}
                 height={200}
                 className="rounded-lg cursor-pointer"
               />
