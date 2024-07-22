@@ -64,6 +64,22 @@ export default function Home() {
       </div>
       <Collections />
       <ProductList />
+      <div className="desktop-header instagram-embed-container my-8 mx-8 flex justify-center">
+        <iframe
+          src="https://www.instagram.com/parichaydesigner/embed"
+          height="1200"
+          scrolling="no"
+          className="w-full"
+        ></iframe>
+      </div>
+      <div className="mobile-bottom-nav instagram-embed-container my-8 mx-8 flex justify-center">
+        <iframe
+          src="https://www.instagram.com/parichaydesigner/embed"
+          height="440"
+          scrolling="no"
+          className="w-full"
+        ></iframe>
+      </div>
       <div className="desktop-header">
         <img
           style={{ width: "100%", marginTop: "50px" }}
