@@ -32,7 +32,7 @@ export default function BottomNav() {
         <div className="relative">
           <ShoppingBag />
           {cart.cartItems.length > 0 && (
-            <span className="bg-red-500 text-white rounded-full px-2 py-1 absolute -top-1 right-6">
+            <span className="bg-red-500 text-white rounded-3xl px-2 py-1 absolute -top-4 -right-6">
               {cart.cartItems.length}
             </span>
           )}
@@ -44,34 +44,33 @@ export default function BottomNav() {
 
   return (
     <>
-      <div className="bg-gray-900 fixed bottom-0 left-0 right-0">
-        <nav className="container mx-auto pl-10 pr-10 py-2">
+      <div className="bg-gray-900 fixed bottom-2 left-20 opacity-75 right-8 rounded-3xl w-60">
+        <nav className="container w-60 pl-2 pr-2 py-2">
           <div className="flex justify-between">
             {navItems.map(({ path, icon, label }) => (
               <Link
                 href={path}
                 key={path}
                 className={`flex flex-col items-center justify-center text-white py-2 ${
-                  pathname === path ? "bg-red-500 px-4 rounded-lg" : ""
+                  pathname === path ? "bg-red-500 px-2 rounded-3xl" : ""
                 }`}
               >
                 {icon}
-                <span className="text-sm">{label}</span>
               </Link>
             ))}
           </div>
         </nav>
       </div>
       <header className="bg-gray-800 sticky top-0 z-50">
-        <div className="flex justify-between items-center py-4 px-8">
+        <div className="flex justify-between items-center py-2 px-2 pl-32">
           <Link
             href="/"
-            className="text-white text-lg font-bold -ml-5"
+            className="text-white text-lg font-bold tracking-widest"
             passHref
           >
-            Parichay Designer
+            PARICHAY DESIGNER
           </Link>
-          <div className="flex gap-3 border border-grey-2 px-3 py-1 items-center rounded-lg">
+          {/* <div className="flex gap-3 border border-grey-2 px-3 py-1 items-center rounded-lg">
             <input
               className="outline-none max-sm:max-w-[120px] bg-transparent"
               placeholder="Search..."
@@ -84,13 +83,13 @@ export default function BottomNav() {
             >
               <Search className="text-white cursor-pointer h-4 w-4 hover:text-red-1" />
             </button>
-          </div>
+          </div> */}
           <div className="flex items-center">
             {user ? (
               <UserButton afterSignOutUrl="/sign-in" />
             ) : (
               <Link className="ml-10" href="/sign-in">
-                <CircleUserRound />
+                <CircleUserRound className="text-white" />
               </Link>
             )}
           </div>
