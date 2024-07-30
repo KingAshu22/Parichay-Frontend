@@ -44,46 +44,26 @@ export default function BottomNav() {
 
   return (
     <>
-      <div className="bg-gray-900 fixed bottom-2 left-20 opacity-75 right-8 rounded-3xl w-60">
-        <nav className="container w-60 pl-2 pr-2 py-2">
-          <div className="flex justify-between">
-            {navItems.map(({ path, icon, label }) => (
-              <Link
-                href={path}
-                key={path}
-                className={`flex flex-col items-center justify-center text-white py-2 ${
-                  pathname === path ? "bg-red-500 px-2 rounded-3xl" : ""
-                }`}
-              >
-                {icon}
-              </Link>
-            ))}
-          </div>
+      <div className="bottom-nav-container">
+        <nav className="nav-container">
+          {navItems.map(({ path, icon, label }) => (
+            <Link
+              href={path}
+              key={path}
+              className={`nav-item ${
+                pathname === path ? "nav-item-active" : ""
+              }`}
+            >
+              {icon}
+            </Link>
+          ))}
         </nav>
       </div>
-      <header className="bg-gray-800 sticky top-0 z-50">
-        <div className="flex justify-between items-center py-2 px-2 pl-32">
-          <Link
-            href="/"
-            className="text-white text-lg font-bold tracking-widest"
-            passHref
-          >
+      <header className="header-container">
+        <div className="flex justify-between items-center">
+          <Link href="/" className="header-link" passHref>
             PARICHAY DESIGNER
           </Link>
-          {/* <div className="flex gap-3 border border-grey-2 px-3 py-1 items-center rounded-lg">
-            <input
-              className="outline-none max-sm:max-w-[120px] bg-transparent"
-              placeholder="Search..."
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-            />
-            <button
-              disabled={query === ""}
-              onClick={() => router.push(`/search/${query}`)}
-            >
-              <Search className="text-white cursor-pointer h-4 w-4 hover:text-red-1" />
-            </button>
-          </div> */}
           <div className="flex items-center">
             {user ? (
               <UserButton afterSignOutUrl="/sign-in" />

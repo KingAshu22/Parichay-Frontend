@@ -8,38 +8,30 @@ import Image from "next/image";
 const desktopImages = [
   {
     src: "1.webp",
-    link: "/",
+    link: "/collections/662e71937ff2084190d84d53",
   },
   {
     src: "2.webp",
-    link: "/",
+    link: "/collections/662d273f8509622013f73e66",
   },
   {
     src: "3.webp",
-    link: "/",
-  },
-  {
-    src: "4.webp",
-    link: "/",
+    link: "/collections/662d587b4395ec178081ba81",
   },
 ];
 
 const mobileImages = [
   {
     src: "1.webp",
-    link: "/",
+    link: "/collections/662e71937ff2084190d84d53",
   },
   {
     src: "2.webp",
-    link: "/",
+    link: "/collections/662d273f8509622013f73e66",
   },
   {
     src: "3.webp",
-    link: "/",
-  },
-  {
-    src: "4.webp",
-    link: "/",
+    link: "/collections/662d587b4395ec178081ba81",
   },
 ];
 
@@ -83,7 +75,7 @@ export default function Home() {
       <div className="desktop-header">
         <img
           style={{ width: "100%", marginTop: "50px" }}
-          src="https://cdn.shopify.com/s/files/1/1746/5485/files/hn.jpg?v=1675403410"
+          src="https://cdn.shopify.com/s/files/1/1746/5485/files/hn.webp?v=1675403410"
           alt="Header Image"
         />
       </div>

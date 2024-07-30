@@ -58,8 +58,14 @@ export default function PayButton({
 
   const makePayment = async () => {
     try {
-      await initializeRazorpay();
+      const res = await initializeRazorpay();
 
+      if (!res) {
+        alert("Razorpay SDK Failed to load");
+        return;
+      }
+
+      // Make API call to the serverless API
       const data = await fetch("/api/razorpay", {
         method: "POST",
         headers: {
@@ -67,16 +73,9 @@ export default function PayButton({
         },
         body: JSON.stringify({
           amount,
-          name,
-          email,
-          mobile,
-          streetAddress,
-          city,
-          postalCode,
-          country,
-          cartProducts,
         }),
       }).then((t) => t.json());
+      console.log(data);
 
       var options = {
         key: keyId,
@@ -87,13 +86,28 @@ export default function PayButton({
         description: "Thank you for your Order",
         image: "https://manuarora.in/logo.png",
         handler: async function (response: any) {
-          const body = { ...response };
-          const res = await axios.post("/api/validate", body);
-
-          if (res.status == 200) {
-            router.push("/payment_success");
+          if (response.status_code == 200) {
+            console.log("Inside 200");
+            const saveOrder = await axios.post("/api/orders", {
+              amount,
+              name,
+              email,
+              mobile,
+              streetAddress,
+              city,
+              postalCode,
+              country,
+              cartProducts,
+            });
+            console.log("After orders");
+            if (saveOrder.status == 200) {
+              router.push("/payment_success");
+            } else {
+              router.push("/payment_failed");
+            }
           } else {
-            router.push("/payment_failed");
+            console.log("Payment Authentication Failed");
+            alert("Payment Authentication Failed");
           }
         },
         prefill: {
@@ -120,17 +134,15 @@ export default function PayButton({
   };
 
   const initializeRazorpay = () => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       const script = document.createElement("script");
       script.src = "https://checkout.razorpay.com/v1/checkout.js";
 
       script.onload = () => {
         resolve(true);
       };
-
-      script.onerror = (error) => {
-        reject(new Error("Failed to load Razorpay SDK"));
-        reject(error);
+      script.onerror = () => {
+        resolve(false);
       };
 
       document.body.appendChild(script);

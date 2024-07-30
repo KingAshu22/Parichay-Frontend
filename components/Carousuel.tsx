@@ -12,7 +12,7 @@ interface Image {
 
 const Carousel = ({ images }: { images: Image[] }) => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -25,13 +25,12 @@ const Carousel = ({ images }: { images: Image[] }) => {
   return (
     <Slider {...settings}>
       {images.map((image, index) => (
-        <div key={index}>
+        <div key={index} className="mobile-carousel-container">
           <a href={image.link} target="_blank" rel="noopener noreferrer">
             <img
               src={image.src}
               className="mobile-carousel"
               alt={`Slide ${index}`}
-              style={{ maxWidth: "100%", height: "auto" }}
             />
           </a>
         </div>
