@@ -4,20 +4,21 @@ const TermsOfServicePage = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <Head>
-        <title>Terms of Service - Parichay Designer</title>
+        <title>Terms of Service - Anaiza International</title>
         <meta
           name="description"
-          content="Terms of Service for Parichay Designer e-commerce website."
+          content="Terms of Service for Anaiza International e-commerce website."
         />
       </Head>
       <h1 className="text-3xl font-semibold mb-4">Terms of Service</h1>
       <h2 className="text-xl font-semibold mb-2">OVERVIEW</h2>
       <p className="mb-6">
-        This website is operated by Parichay Designer. Throughout the site, the
-        terms “we”, “us” and “our” refer to Parichay Designer. Parichay Designer
-        offers this website, including all information, tools, and services
-        available from this site to you, the user, conditioned upon your
-        acceptance of all terms, conditions, policies, and notices stated here.
+        This website is operated by Anaiza International. Throughout the site,
+        the terms “we”, “us” and “our” refer to Anaiza International. Anaiza
+        International offers this website, including all information, tools, and
+        services available from this site to you, the user, conditioned upon
+        your acceptance of all terms, conditions, policies, and notices stated
+        here.
       </p>
       <p className="mb-6">
         By visiting our site and/or purchasing something from us, you engage in
@@ -353,8 +354,7 @@ const TermsOfServicePage = () => {
       <p className="mb-6">
         These Terms of Service and any separate agreements whereby we provide
         you Services shall be governed by and construed in accordance with the
-        laws of Parichay Mens, Near Ramesh Hotel, Kurar Village, Malad (East),
-        Mumbai - 400 097
+        laws of Anaiza International, Ghatkopar
       </p>
       <h2 className="text-xl font-semibold mb-2">
         SECTION 19 - CHANGES TO TERMS OF SERVICE
@@ -371,10 +371,13 @@ const TermsOfServicePage = () => {
       {/* Add other sections as per your content */}
       <p className="text-sm text-gray-600">
         For any questions about the Terms of Service, please contact us at{" "}
-        <a href="mailto:parichaydesigner24@gmail.com" className="text-blue-500">
-          parichaydesigner24@gmail.com
+        <a
+          href="mailto:anaizainternational@gmail.com"
+          className="text-blue-500"
+        >
+          anaizainternational@gmail.com
         </a>{" "}
-        or call us at 9876543210.
+        or call us at +91 70213 88809.
       </p>
     </div>
   );

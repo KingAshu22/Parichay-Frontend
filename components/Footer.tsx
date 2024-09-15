@@ -78,7 +78,7 @@ const Footer = () => {
       </div>
       <div className="flex justify-between items-center mt-8 border-t border-gray-300 pt-4 pb-10">
         <span className="text-gray-600 pb-10">
-          &copy; 2024 Parichay Designer, a subsidiary of Parichay Mens.
+          &copy; 2024 Anaiza International
         </span>
         <div className="text-gray-600 pb-10">
           {/* Insert social media icons here */}
