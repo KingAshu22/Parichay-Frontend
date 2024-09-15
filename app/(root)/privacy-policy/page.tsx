@@ -4,10 +4,10 @@ const PrivacyPolicyPage = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <Head>
-        <title>Privacy Policy - Parichay Designer</title>
+        <title>Privacy Policy - Anaiza International</title>
         <meta
           name="description"
-          content="Terms of Service for Parichay Designer e-commerce website."
+          content="Terms of Service for Anaiza International e-commerce website."
         />
       </Head>
       <h1 className="text-3xl font-semibold mb-4">Privacy Policy</h1>
@@ -40,8 +40,8 @@ const PrivacyPolicyPage = () => {
         If after you opt-in, you change your mind, you may withdraw your consent
         for us to contact you, for the continued collection, use or disclosure
         of your information, at anytime, by contacting us at
-        parichaydesigner24@gmail.com or mailing us at: Parichay Mens, Near
-        Ramesh Hotel, Kurar Village, Malad (East), Mumbai - 400 097
+        anaizainternational@gmail.com or mailing us at: Anaiza International,
+        Ghatkopar
       </p>
       <h2 className="text-xl font-semibold mb-2">SECTION 3 - DISCLOSURE</h2>
       <p className="mb-6">
@@ -211,10 +211,13 @@ const PrivacyPolicyPage = () => {
         If you would like to: access, correct, amend or delete any personal
         information we have about you, register a complaint, or simply want more
         information contact our Privacy Compliance Officer at{" "}
-        <a href="mailto:parichaydesigner24@gmail.com" className="text-blue-500">
-          parichaydesigner24@gmail.com
+        <a
+          href="mailto:anaizainternational@gmail.com"
+          className="text-blue-500"
+        >
+          anaizainternational@gmail.com
         </a>{" "}
-        or call us at 9876543210.
+        or call us at +91 70213 88809.
       </p>
     </div>
   );

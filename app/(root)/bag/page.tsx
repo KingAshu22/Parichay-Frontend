@@ -8,22 +8,39 @@ import { useUser } from "@clerk/nextjs";
 import { MinusCircle, PlusCircle, Trash } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Cart = () => {
   const router = useRouter();
   const { user } = useUser();
 
+  console.log(user);
+
+  const [name, setName] = useState("");
+  const [mobile, setMobile] = useState("");
   const [streetAddress, setStreetAddress] = useState("");
   const [city, setCity] = useState("");
   const [postalCode, setPostalCode] = useState("");
   const [country, setCountry] = useState("");
+  const [countryCode, setCountryCode] = useState("");
+  const [countryFlag, setCountryFlag] = useState("");
+
+  useEffect(() => {
+    fetch("https://ipapi.co/json/")
+      .then((response) => response.json())
+      .then((data) => {
+        const countryCode = data.country_calling_code;
+        const countryFlag = `https://flagicons.lipis.dev/flags/4x3/${data.country.toLowerCase()}.svg`;
+        setCountryCode(countryCode);
+        setCountryFlag(countryFlag);
+        setCountry(data.country_name);
+      })
+      .catch((error) => console.error("Error fetching location data:", error));
+  }, []);
 
   const clerkId = user?.id;
 
   const email = user?.emailAddresses[0].emailAddress;
-  const name = user?.fullName;
-  const mobile = user?.phoneNumbers[0].phoneNumber;
 
   const cart = useCart();
 
@@ -137,6 +154,29 @@ const Cart = () => {
 
           <div className="w-1/3 max-lg:w-full flex flex-col gap-8 bg-grey-1 rounded-lg px-4 py-5">
             <div className="pb-4">
+              <p className="text-heading4-bold">Personal Info</p>
+              <input
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(ev) => setName(ev.target.value)}
+                className="w-full border border-gray-300 rounded-md py-2 px-3 mt-2 focus:outline-none focus:ring focus:border-blue-300"
+              />
+              <div className="flex items-center mt-2">
+                <img
+                  src={countryFlag}
+                  alt="country flag"
+                  className="w-6 h-4 mr-2"
+                />
+                <span className="mr-2">{countryCode}</span>
+                <input
+                  type="text"
+                  placeholder="Contact Number"
+                  value={mobile}
+                  onChange={(ev) => setMobile(ev.target.value)}
+                  className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring focus:border-blue-300"
+                />
+              </div>
               <p className="text-heading4-bold">Address</p>
               <input
                 type="text"

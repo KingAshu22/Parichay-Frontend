@@ -30,19 +30,6 @@ const ProductDetails = async ({
           </div>
         </div>
       )}
-
-      <div className="desktop-header">
-        <img
-          style={{ width: "100%", marginTop: "50px" }}
-          src="https://cdn.shopify.com/s/files/1/1746/5485/files/hn.jpg?v=1675403410"
-        />
-      </div>
-      <div className="mobile-bottom-nav">
-        <img
-          style={{ width: "100%", marginTop: "50px" }}
-          src="https://cdn.shopify.com/s/files/1/1746/5485/files/image_2.png?v=1675403265"
-        />
-      </div>
       <Details />
       <Footer />
     </>

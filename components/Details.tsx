@@ -9,7 +9,7 @@ interface DetailItemProps {
 }
 
 const Container = ({ children }: { children: ReactNode }) => (
-  <div className="flex flex-wrap justify-center items-center gap-10 md:gap-8 px-8 py-10 max-w-screen-xl mx-auto md:py-20">
+  <div className="flex flex-wrap justify-center items-center gap-28 md:gap-8 px-8 py-10 max-w-screen-xl mx-auto md:py-20">
     {children}
   </div>
 );
@@ -42,7 +42,6 @@ const Details = () => {
       <DetailItem icon={<Wallet />} text="Affordable Products" />
       <DetailItem icon={<ShieldCheck />} text="Secured Payments" />
       <DetailItem icon={<Phone />} text="Easy Support" />
-      <DetailItem icon={<Box />} text="Easy Returns" />
     </Container>
   );
 };

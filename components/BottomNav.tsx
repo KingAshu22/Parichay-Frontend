@@ -62,7 +62,7 @@ export default function BottomNav() {
       <header className="header-container">
         <div className="flex justify-between items-center">
           <Link href="/" className="header-link" passHref>
-            PARICHAY DESIGNER
+            Anaiza International
           </Link>
           <div className="flex items-center">
             {user ? (

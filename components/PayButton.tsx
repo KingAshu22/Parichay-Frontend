@@ -79,7 +79,7 @@ export default function PayButton({
 
       var options = {
         key: keyId,
-        name: "Parichay Designer",
+        name: "Anaiza International",
         currency: data.currency,
         amount: data.amount,
         order_id: data.id,
